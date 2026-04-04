@@ -1,0 +1,23 @@
+name: New lab request
+about: Propose a beginner-friendly lab
+labels: [enhancement, lab]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Proposed lab title
+    validations:
+      required: true
+  - type: textarea
+    id: objectives
+    attributes:
+      label: Learning objectives
+    validations:
+      required: true
+  - type: input
+    id: duration
+    attributes:
+      label: Estimated duration
+      placeholder: 45 minutes
+    validations:
+      required: true

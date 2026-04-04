@@ -1,0 +1,24 @@
+name: Stale Issues
+
+on:
+  schedule:
+    - cron: '0 15 * * 1'
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mark stale issues and pull requests
+        uses: actions/stale@v9
+        with:
+          stale-issue-message: 'This issue is stale. Comment to keep it active.'
+          stale-pr-message: 'This pull request is stale. Comment to keep it active.'
+          days-before-stale: 45
+          days-before-close: 14
+          stale-issue-label: stale
+          stale-pr-label: stale

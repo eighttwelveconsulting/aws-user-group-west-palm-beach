@@ -1,0 +1,17 @@
+name: Docs improvement
+about: Suggest a documentation improvement
+labels: [documentation]
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Documentation file
+      placeholder: docs/GETTING-STARTED.md
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested improvement
+    validations:
+      required: true

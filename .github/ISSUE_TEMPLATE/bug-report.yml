@@ -1,0 +1,23 @@
+name: Bug report
+about: Report a problem in labs, docs, or sample code
+labels: [bug]
+body:
+  - type: input
+    id: location
+    attributes:
+      label: File or lab location
+      placeholder: labs/lab-01-aws-cli-basics/README.md
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true

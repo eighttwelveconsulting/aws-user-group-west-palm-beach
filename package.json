@@ -1,0 +1,14 @@
+{
+  "name": "aws-user-group-west-palm-beach",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.32.1",
+  "description": "Beginner-friendly AWS User Group labs and project docs",
+  "scripts": {
+    "lint:md": "markdownlint-cli2 '**/*.md' '#node_modules'",
+    "ci": "pnpm run lint:md"
+  },
+  "devDependencies": {
+    "markdownlint-cli2": "^0.15.0"
+  }
+}
