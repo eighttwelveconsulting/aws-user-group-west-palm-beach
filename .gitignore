@@ -4,6 +4,7 @@ node_modules/
 # Ignore AWS SAM build artifacts and configuration files
 .aws-sam/
 samconfig.toml
+packaged.yaml
 
 # Ignore environment variables and sensitive files
 .env
