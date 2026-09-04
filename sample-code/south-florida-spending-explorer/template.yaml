@@ -6,7 +6,7 @@ Metadata:
   AWS::ServerlessRepo::Application:
     Name: south-florida-spending-explorer
     Description: Explore federal spending connected to South Florida communities.
-    Author: AWS User Group Palm Beach
+    Author: AWS User Group West Palm Beach
     SpdxLicenseId: Apache-2.0
     LicenseUrl: ../../LICENSE
     ReadmeUrl: README.md
