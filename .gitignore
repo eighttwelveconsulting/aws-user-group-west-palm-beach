@@ -1,4 +1,22 @@
+# Ignore node modules, build artifacts, and sensitive files
 node_modules/
+
+# Ignore AWS SAM build artifacts and configuration files
+.aws-sam/
+samconfig.toml
+
+# Ignore environment variables and sensitive files
+.env
+.env.*
+!.env.example
+.aws/
+credentials
+*.pem
+*.key
+*.p12
+*.pfx
 .DS_Store
 *.log
 coverage/
+dist/
+build/
