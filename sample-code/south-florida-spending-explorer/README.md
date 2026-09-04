@@ -192,8 +192,17 @@ Build and publish with the SAM CLI:
 
 ```bash
 sam build
-sam publish --template-file .aws-sam/build/template.yaml --region us-east-1
+sam package \
+  --template-file template.yaml \
+  --output-template-file packaged.yaml \
+  --resolve-s3 \
+  --region us-east-1
+sam publish \
+  --template packaged.yaml \
+  --region us-east-1
 ```
+
+`sam package` is required before `sam publish`. It uploads the Lambda code, README, and license artifacts to Amazon S3 and replaces local paths with S3 URLs in `packaged.yaml`. The generated `packaged.yaml` file is ignored by Git. Add `--profile <YOUR_AWS_PROFILE>` to both commands when using a named AWS CLI profile.
 
 The command prints the Serverless Application Repository application ARN. By default, a newly published application is private. Make it available to attendees from the [Serverless Application Repository console](https://console.aws.amazon.com/serverlessrepo/home):
 
