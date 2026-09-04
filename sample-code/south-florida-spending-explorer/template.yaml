@@ -1,0 +1,60 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Explore federal spending connected to South Florida communities.
+
+Metadata:
+  AWS::ServerlessRepo::Application:
+    Name: south-florida-spending-explorer
+    Description: Explore federal spending connected to South Florida communities.
+    Author: AWS User Group West Palm Beach
+    SpdxLicenseId: Apache-2.0
+    LicenseUrl: ../../LICENSE
+    ReadmeUrl: README.md
+    SourceCodeUrl: https://github.com/eighttwelveconsulting/aws-user-group-west-palm-beach/tree/main/sample-code/south-florida-spending-explorer
+    HomePageUrl: https://github.com/eighttwelveconsulting/aws-user-group-west-palm-beach
+    Labels:
+      - aws
+      - sam
+      - lambda
+      - api-gateway
+      - south-florida
+    SemanticVersion: 1.0.0
+
+Globals:
+  Function:
+    Timeout: 15
+    Runtime: nodejs24.x
+    Architectures:
+      - x86_64
+
+Resources:
+  SpendingExplorerFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: .
+      Handler: src/handler.handler
+      Description: Serves the spending explorer UI and queries USASpending.gov.
+      Events:
+        Home:
+          Type: HttpApi
+          Properties:
+            Path: /
+            Method: GET
+        Assets:
+          Type: HttpApi
+          Properties:
+            Path: /{asset+}
+            Method: GET
+        Spending:
+          Type: HttpApi
+          Properties:
+            Path: /api/spending
+            Method: GET
+      Environment:
+        Variables:
+          UPSTREAM_URL: https://api.usaspending.gov/api/v2/search/spending_by_award/
+
+Outputs:
+  SpendingExplorerUrl:
+    Description: URL for the deployed spending explorer.
+    Value: !Sub https://${ServerlessHttpApi}.execute-api.${AWS::Region}.${AWS::URLSuffix}/

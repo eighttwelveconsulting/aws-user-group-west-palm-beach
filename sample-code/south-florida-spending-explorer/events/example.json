@@ -1,0 +1,14 @@
+{
+  "version": "2.0",
+  "rawPath": "/api/spending",
+  "queryStringParameters": {
+    "county": "palm-beach",
+    "fiscalYear": "2025"
+  },
+  "requestContext": {
+    "http": {
+      "method": "GET",
+      "path": "/api/spending"
+    }
+  }
+}

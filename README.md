@@ -18,6 +18,8 @@ It is designed for community members who are new to:
 3. Review [AWS Prerequisites](docs/AWS-PREREQUISITES.md).
 4. Start your first lab: [Lab 01 - AWS CLI Basics](labs/lab-01-aws-cli-basics/README.md).
 
+Ready for a complete serverless build? Continue with [Project 02 - South Florida Spending Explorer](projects/project-02-south-florida-spending-explorer/README.md).
+
 ## Repository Layout
 
 - `docs/`: onboarding guides and references
