@@ -186,7 +186,7 @@ Data attribution: [USASpending.gov](https://www.usaspending.gov/). Learn more fr
 
 The template includes metadata required for publishing this application. Publishing is an organizer or maintainer task; attendees should deploy the published application instead of publishing their own copy during the meetup.
 
-Before publishing, make sure the GitHub URLs in `template.yaml` point to the public repository, the local `README.md` and `../../../LICENSE` files are present, and the semantic version has changed from any version already published.
+Before publishing, make sure the GitHub URLs in `template.yaml` point to the public repository, the local `README.md` and `../../LICENSE` files are present, and the semantic version has changed from any version already published.
 
 Build and publish with the SAM CLI:
 
