@@ -140,11 +140,11 @@ For attendees using CloudShell, use the published application in the Serverless 
 For your demonstration or advanced attendees, use the repository in WSL with Docker Desktop integration:
 
 ```bash
-aws sts get-caller-identity --profile Admin-058264246100
+aws sts get-caller-identity --profile YOUR_AWS_PROFILE
 docker version
 sam validate --lint
-sam build --use-container --profile Admin-058264246100
-sam local start-api --profile Admin-058264246100
+sam build --use-container --profile YOUR_AWS_PROFILE
+sam local start-api --profile YOUR_AWS_PROFILE
 ```
 
 The `--profile` value must be the local AWS CLI profile name, not an access key or account number. The application does not need AWS credentials for `sam local start-api`, but using the profile consistently is useful when you later run `sam deploy`.
