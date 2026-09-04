@@ -140,11 +140,11 @@ For attendees using CloudShell, use the published application in the Serverless 
 For your demonstration or advanced attendees, use the repository in WSL with Docker Desktop integration:
 
 ```bash
-aws sts get-caller-identity --profile YOUR_AWS_PROFILE
+aws sts get-caller-identity --profile <YOUR_AWS_PROFILE>
 docker version
 sam validate --lint
-sam build --use-container --profile YOUR_AWS_PROFILE
-sam local start-api --profile YOUR_AWS_PROFILE
+sam build --use-container --profile <YOUR_AWS_PROFILE>
+sam local start-api --profile <YOUR_AWS_PROFILE>
 ```
 
 The `--profile` value must be the local AWS CLI profile name, not an access key or account number. The application does not need AWS credentials for `sam local start-api`, but using the profile consistently is useful when you later run `sam deploy`.
@@ -152,7 +152,7 @@ The `--profile` value must be the local AWS CLI profile name, not an access key 
 If `sam build --use-container` fails while `docker version` succeeds, run the build without the container option:
 
 ```bash
-sam build --profile Admin-058264246100
+sam build --profile <YOUR_AWS_PROFILE>
 ```
 
 This application has no native dependencies, so the non-container build is suitable for deployment. You still need a working Docker or Finch runtime for `sam local invoke` and `sam local start-api`.
